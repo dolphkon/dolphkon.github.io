@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="测试2, 半夏薄荷澜">
+    <meta name="keywords" content="Kotlin 学习教程之类型系统和智能类型转换（二）, 半夏薄荷澜">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>测试2 | 半夏薄荷澜</title>
+    <title>Kotlin 学习教程之类型系统和智能类型转换（二） | 半夏薄荷澜</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -490,12 +491,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">测试2</h1>
+                    <h1 class="description center-align post-title">Kotlin 学习教程之类型系统和智能类型转换（二）</h1>
                 </div>
             </div>
         </div>
@@ -612,8 +613,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/3/">
-                                <span class="chip bg-color">3</span>
+                            <a href="/tags/kotlin/">
+                                <span class="chip bg-color">kotlin</span>
                             </a>
                         
                     </div>
@@ -624,8 +625,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                生活
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                技术
                             </a>
                         
                     </div>
@@ -644,14 +645,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-18
+                    2020-10-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.5k
                 </div>
                 
 
@@ -668,15 +669,134 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><blockquote>
+<p>从上一篇我们了解了 kotlin 这门语言，以及通过 IntelliJ IDEA 和 AndroidStudio 开发工具创建了 kotlin 项目并运行了 “hello world” 程序，在这一篇，我们将来学习 kotlin的数据类型系统，以及各种类型之间的转换。</p>
+</blockquote>
+<h5 id="1-Java-类型系统"><a href="#1-Java-类型系统" class="headerlink" title="1. Java 类型系统"></a>1. Java 类型系统</h5><p><img src="https://ae01.alicdn.com/kf/H8a51b269f46f4a7fb94f32b2361f0bbcO.png"></p>
+<p>由上图可知：在 Java 中，类型系统由8种基本类型，6种引用类型以及一种空特殊的空引用类型。</p>
+<ul>
+<li>基本类型：byte,char,short,long,float,double,int,boolean</li>
+<li>引用类型：<ul>
+<li>类：class</li>
+<li>接口：interface</li>
+<li>数组：array</li>
+<li>参数化类型：泛型</li>
+<li>注解：Annotation</li>
+<li>枚举：enumeration</li>
+</ul>
+</li>
+<li>空引用：null</li>
+</ul>
+<p>基本数据类型和引用数据类型在创建的时候，内存的存储方式区别：</p>
+<ul>
+<li>基本数据类型：在被创建时，在栈上给其划分一块内存，将数值<br>直接存储在栈上（性能高）；</li>
+<li>引用数据类型：在被创建时，首先在栈上给其引用（句柄）分配<br>一块内存，而对象的具体信息存储在堆内存上，然后由栈上面<br>的引用指向堆中对象的地址。</li>
+</ul>
+<h5 id="2-kotlin-类型系统"><a href="#2-kotlin-类型系统" class="headerlink" title="2.kotlin 类型系统"></a>2.kotlin 类型系统</h5><p>在 kotlin 中，将类型系统根据数据是否可空分为了可空类型和不可空类型。可空类型能够在编译程序的时候进行类型检查，以提前发现并解决问题，大大的降低了出现空指针的情况。</p>
+<h6 id="2-1-不可空类型"><a href="#2-1-不可空类型" class="headerlink" title="2.1 不可空类型"></a>2.1 不可空类型</h6><p>kotlin 中不可空的数字类型对应了 Java 中的原始类型，但是写法却 不一样：</p>
+<ul>
+<li>Kotlin中的数字类型与 Java 原始的数字类型</li>
+</ul>
+<p><img src="https://pic.superbed.cn/item/5dbd47eebd461d945af00fcf.png"></p>
+<pre><code>// 声明Int 型
+val age:Int=20
+//声明Long 型
+val along:Long=12368172397127391
+//声明 Float 型
+val aFloat:Float=2.0F
+//声明 double 型
+val aDouble:Double=3.0
+//声明 Short 型
+val aShort:Short=127
+// 声明Byte 型
+val maxByte: Byte = Byte.MAX_VALUE
+//声明Boolean
+val aBoolean: Boolean = true</code></pre>
+<p>以上都是不可空的数字类型，在声明变量的时候都给它们赋了值，但是如果我们不给它赋值或者赋值为空，则编译器会显示错误，提醒我们必须要初始化该数字类型的值。</p>
+<p><img src="https://pic.superbed.cn/item/5dbd4e63bd461d945af056ff.png"></p>
+<p><img src="https://pic.superbed.cn/item/5dbd4edabd461d945af05d7a.png"></p>
+<ul>
+<li>Kotlin中可空数字类型与 Java 中装箱数字类型</li>
+</ul>
+<p>​                                        <img src="https://pic.superbed.cn/item/5dbd4873bd461d945af01633.png"></p>
+<p><img src="https://pic.superbed.cn/item/5dbd5215bd461d945af0885f.png"></p>
+<h6 id="2-2-可空类型"><a href="#2-2-可空类型" class="headerlink" title="2.2 可空类型"></a>2.2 可空类型</h6><p>在Java 开发中，经常会遇到空指针的问题，那么能不能在编译的时候提前发现错误并进行代码修复呢？kotlin中出现了可空类型以解决这个痛点。我们以如下输出字符串str的长度代码为例：</p>
+<ul>
+<li>kotlin中：</li>
+</ul>
+<pre><code>val str:String? =&quot;hello world&quot;
+fun getLength():Int&#123;
+    return str?.length?:0
+&#125;
+fun main(args: Array&lt;String&gt;) &#123;
+   println(&quot;str字符串的长度为：$&#123;getLength()&#125;&quot;)
+&#125;</code></pre>
+<ul>
+<li><p>Java代码:</p>
+<pre><code>public class helloword &#123;
+    static String str = &quot;hello world&quot;;
+    public static void main(String[] args) &#123;
+        System.out.print(&quot;str 字符串的长度为：&quot; + getLength());
+
+    &#125;
+
+    public static int getLength() &#123;
+        if (str != null) &#123;
+            return str.length();
+        &#125; else &#123;
+            return 0;
+        &#125;
+    &#125;
+&#125;</code></pre>
+</li>
+</ul>
+<p>在kotlin 代码中 <strong>str?.length?:0</strong>  就是 kotlin中常用的 Elvis表达式，它的意思是如果str为不空，那就返回 str.length的值，否则返回0。同样的需求，不一样量的代码，kotlin是不是显得更加精简全面呢？显然是的。</p>
+<h6 id="2-3-安全操作符"><a href="#2-3-安全操作符" class="headerlink" title="2.3 安全操作符"></a>2.3 安全操作符</h6><p>（1）安全调用符：”?.”</p>
+<pre><code>val str:String? =&quot;hello world&quot;
+fun main(args: Array&lt;String&gt;) &#123;
+   // 方式一：
+    if (str != null) &#123;
+        println(str.length)
+    &#125;
+    // 方式二：
+    println(str?.length)
+&#125;</code></pre>
+<p>我们知道，在程序中，不能使用可空的对象直接调用其属性或者方法，否则会直接报错，在Java 中也会出现空指针异常。在以上代码中，在保证程序的正常执行的情况下，方式一和方式二需求一样，但是方式二使用了安全调用符 ?.是得代码更加的简洁。程序只有在str不为空的情况下才会执行 str.length的方法。</p>
+<p>（2）Elvis运算符“?:”</p>
+<p>在前面例子中 str?.length?:0 就使用了Elvis运算符“?:”,同理只有str不为空的情况下才会执行 str.length的方法</p>
+<p>（3）非空断言“!!”</p>
+<p>Kotlin中提供了断言操作符“!!”，它表示已经确定该可空对象不为空且直接调用其属性或方法。该操作符需要谨慎使用，因为一旦遇到了该对象为空的时候，则会导致空指针异常。代码及结果如下：</p>
+<p><img src="https://pic.superbed.cn/item/5dbd6139bd461d945af15832.png"></p>
+<h5 id="3-类型检测和智能类型转换"><a href="#3-类型检测和智能类型转换" class="headerlink" title="3.类型检测和智能类型转换"></a>3.类型检测和智能类型转换</h5><h6 id="3-1-is-和-is-运算符"><a href="#3-1-is-和-is-运算符" class="headerlink" title="3.1 is 和 !is 运算符"></a>3.1 is 和 !is 运算符</h6><p>is运算符是用来检测对象A是否与特定的类型X兼容（此对象A是X类型或者派生于X类型）</p>
+<p><img src="https://pic.superbed.cn/item/5dbd6757bd461d945af1aee7.png"></p>
+<h6 id="3-2-Java-和kotlin中的类型转换"><a href="#3-2-Java-和kotlin中的类型转换" class="headerlink" title="3.2  Java 和kotlin中的类型转换"></a>3.2  Java 和kotlin中的类型转换</h6><p>例子：</p>
+<ul>
+<li>现有一个子类，一个父类，子类和父类各自拥有一个方法</li>
+<li>需要实现父类调用子类的方法 以及子类调用父类的方法打印输出”hello kotlin”</li>
+</ul>
+<p>（1）Java 代码实现</p>
+<p><img src="https://pic.superbed.cn/item/5dc0d0ed8e0e2e3ee9051aba.png"></p>
+<p>（2）kotlin代码实现</p>
+<p><img src="https://pic.superbed.cn/item/5dc0d0e58e0e2e3ee90519e9.png"></p>
+<p>对比以上代码可知：Java 中父类在调用子类方法获取 “kotlin”字符串的时候，编译器中进行了强制类型转换，而kotlin 代码中，父类直接调用了子类的getKotlin（），并没有进行强制类型转换，这是因为编译器已经知道它该父类本来就是子类的实例，无需再进行强转。</p>
+<h6 id="3-3-kotlin中智能类型转换"><a href="#3-3-kotlin中智能类型转换" class="headerlink" title="3.3 kotlin中智能类型转换"></a>3.3 kotlin中智能类型转换</h6><p>在kotlin中，使用 as 进行引用类型的显式类型转换类型转换，但如果类型转换失败会出现类型转换失败的异常，使用 <strong>as？运算符</strong>进行智能类型转换，当转换失败的时候直接返回null，代码如下：</p>
+<pre><code>fun main(args: Array&lt;String&gt;) &#123;
+    val parent: Parent = Parent()
+    val child: Child? =parent as? Child
+    println(child?.getKotlin())
+
+&#125;
+open class Parent&#123;
+    fun getHello():String&#123;
+        return &quot;hello&quot;
+    &#125;
+&#125;
+class Child : Parent() &#123;
+    fun getKotlin(): String &#123;
+        return &quot;kotlin&quot;
+    &#125;
+&#125;</code></pre>
+<p>以上代码，父类转换为子类并调用其方法，会出现类型转换失败的异常，但是使用了as？运算符，会直接输出null而避免了异常。</p>
 
             </div>
             <hr/>
@@ -740,8 +860,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/3/">
-                                    <span class="chip bg-color">3</span>
+                                <a href="/tags/kotlin/">
+                                    <span class="chip bg-color">kotlin</span>
                                 </a>
                             
                         </div>
@@ -913,19 +1033,21 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/18/ce-shi-1/">
+                <a href="/2020/09/18/kotlin-xue-xi-jiao-cheng-zhun-bei-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="测试1">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Kotlin 学习教程（准备篇）">
                         
-                        <span class="card-title">测试1</span>
+                        <span class="card-title">Kotlin 学习教程（准备篇）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            前言此篇文章为kotlin 学习教程的第一篇，主要介绍在进行kotlin学习前环境的搭建以及如何通过IDE创建一个kotlin项目。
+1.关于 kotlin
+kotlin 和 Java 语言一样，都是静态型编程语言，且都可以用来开发 And
                         
                     </div>
                     <div class="publish-info">
@@ -966,15 +1088,15 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="测试3">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="kotlin 学习教程（四）|面向对象">
                         
-                        <span class="card-title">测试3</span>
+                        <span class="card-title">kotlin 学习教程（四）|面向对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            前言我们都知道，Java是一种面向对象编程语言，在 Java 中，万物皆对象。其实，kotlin 也是一门面向对象编程的语言。类为某一系列对象的统称，我们通过对象来完成某些事情，那么，在 kotlin 中，我们是如何面向对象编程的呢？今天我
                         
                     </div>
                     <div class="publish-info">
@@ -985,8 +1107,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
                                 </a>
                             
                             
@@ -996,8 +1118,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/1/">
-                        <span class="chip bg-color">1</span>
+                    <a href="/tags/kotlin/">
+                        <span class="chip bg-color">kotlin</span>
                     </a>
                     
                 </div>
@@ -1202,7 +1324,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">312</span>&nbsp;字
+                class="white-color">9.2k</span>&nbsp;字
             
             
             

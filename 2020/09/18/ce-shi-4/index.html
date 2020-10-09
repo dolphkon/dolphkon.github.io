@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="测试4, 半夏薄荷澜">
+    <meta name="keywords" content="kotlin 学习教程(五) |函数和函数式编程, 半夏薄荷澜">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>测试4 | 半夏薄荷澜</title>
+    <title>kotlin 学习教程(五) |函数和函数式编程 | 半夏薄荷澜</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -490,12 +491,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">测试4</h1>
+                    <h1 class="description center-align post-title">kotlin 学习教程(五) |函数和函数式编程</h1>
                 </div>
             </div>
         </div>
@@ -612,8 +613,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/4/">
-                                <span class="chip bg-color">4</span>
+                            <a href="/tags/kotlin/">
+                                <span class="chip bg-color">kotlin</span>
                             </a>
                         
                     </div>
@@ -644,14 +645,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-09-18
+                    2020-10-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    2.8k
                 </div>
                 
 
@@ -668,15 +669,326 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>我们知道，在程序中，通常情况下。一个类会有自己的方法(函数)以及属性，这些方法代表了该类的特性或者说具有的能力。今天我们一起来研究一下 kotlin中的函数。</p>
+<h4 id="1-如何声明一个函数"><a href="#1-如何声明一个函数" class="headerlink" title="1.如何声明一个函数"></a>1.如何声明一个函数</h4><p>在 kotlin 中，我们通过关键字 fun 来声明一个函数</p>
+<pre><code>fun multiply(x:Int,y:Int):Int&#123;
+   ...  //代码块
+    return x*y
+&#125;</code></pre>
+<p> 如上面的代码所示:我们定义了函数multiply()并指定其返回类型为 Int 类型。</p>
+<h4 id="2-Lambda表达式"><a href="#2-Lambda表达式" class="headerlink" title="2.Lambda表达式"></a>2.Lambda表达式</h4><h5 id="2-1-Lambda表达式介绍"><a href="#2-1-Lambda表达式介绍" class="headerlink" title="2.1 Lambda表达式介绍"></a>2.1 Lambda表达式介绍</h5><p>从Java8 开始，Lambda表达式在 Lambda表达式，在其他的编程语言中（例如：<code>Scala</code>语言）,这种表达式是语法糖中的一种,在 kotlin 中，也支持这种语法,它允许把函数作为一个方法的参数，可以使代码变的更加简洁紧凑。</p>
+<p><code>Lambda</code>表达式的本质其实是<code>匿名函数</code>，因为在其底层实现中还是通过<code>匿名函数</code>来实现的。但是我们在用的时候不必关心起底层实现。不过<code>Lambda</code>的出现确实是减少了代码量的编写，同时也是代码变得更加简洁明了。</p>
+<h5 id="2-2-Java-8-Lambda-表达式"><a href="#2-2-Java-8-Lambda-表达式" class="headerlink" title="2.2  Java 8 Lambda 表达式"></a>2.2  Java 8 Lambda 表达式</h5><h6 id="2-2-1-语法："><a href="#2-2-1-语法：" class="headerlink" title="2.2.1 语法："></a>2.2.1 语法：</h6><pre><code>(parameters) -&gt; expression
+或
+(parameters) -&gt;&#123; statements; &#125;</code></pre>
+<h6 id="2-2-2-特征"><a href="#2-2-2-特征" class="headerlink" title="2.2.2 特征"></a>2.2.2 特征</h6><ul>
+<li><strong>可选类型声明：</strong>不需要声明参数类型，编译器可以统一识别参数值。</li>
+<li><strong>可选的参数圆括号：</strong>一个参数无需定义圆括号，但多个参数需要定义圆括号。</li>
+<li><strong>可选的大括号：</strong>如果主体包含了一个语句，就不需要使用大括号。</li>
+<li><strong>可选的返回关键字：</strong>如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值。</li>
+</ul>
+<h6 id="2-2-3-代码如下"><a href="#2-2-3-代码如下" class="headerlink" title="2.2.3 代码如下:"></a>2.2.3 代码如下:</h6><pre><code>// 1. 不需要参数,返回值为 5  
+() -&gt; 5  
+
+// 2. 接收一个参数(数字类型),返回其2倍的值  
+x -&gt; 2 * x  
+
+// 3. 接受2个参数(数字),并返回他们的差值  
+(x, y) -&gt; x – y  
+
+// 4. 接收2个int型整数,返回他们的和  
+(int x, int y) -&gt; x + y  
+
+// 5. 接受一个 string 对象,并在控制台打印,不返回任何值(看起来像是返回void)  
+(String s) -&gt; System.out.print(s)</code></pre>
+<p>从上面可以看出，代码简洁了不少。</p>
+<p>我们再来看一个例子，在java中假如要计算两个数的和，则代码如下:</p>
+<pre><code>import java.util.function.BiFunction;
+
+public class helloword &#123;
+    public static void main(String[] args) &#123;
+        BiFunction&lt;Integer,Integer,Integer&gt; sum=(Integer x, Integer y) -&gt;&#123;
+            return x+y;
+        &#125;;
+        System.out.println(&quot;sum(3, 4) = &quot; + sum.apply(3, 4));
+    &#125;
+
+&#125;</code></pre>
+<p>运行结果如下:</p>
+<p><img src="https://pic.downk.cc/item/5e0ae9c576085c3289fdefb2.png"></p>
+<p>但是，在 java 8 以下版本，并不支持 Lambda 表达式，而这个时候.kotlin 完美的兼容了 java 8 以下版本对 lamdba 表达式的支持，并且能够进行混合开发。</p>
+<h5 id="2-3-kotlin-Lamdba-表达式"><a href="#2-3-kotlin-Lamdba-表达式" class="headerlink" title="2.3 kotlin Lamdba 表达式"></a>2.3 kotlin Lamdba 表达式</h5><p>好，我们再来看看 Android 中 kotlin  的使用,Kotlin语言中</p>
+<h6 id="2-3-1-Lamdab-表达式-的声明："><a href="#2-3-1-Lamdab-表达式-的声明：" class="headerlink" title="2.3.1 Lamdab 表达式 的声明："></a>2.3.1 Lamdab 表达式 的声明：</h6><p>lambda表达式的完整语法如下：</p>
+<pre><code>&#123; params -&gt; expressions &#125;</code></pre>
+<ul>
+<li><strong>params</strong>表示参数列表，<strong>expressions</strong>表示具体实现，可以是单行语句，也可以是多行语句。</li>
+<li>Lamdba 表达式的值为大括号最后一行的值。</li>
+</ul>
+<h6 id="2-3-2-Lamdba-表达式的类型表示："><a href="#2-3-2-Lamdba-表达式的类型表示：" class="headerlink" title="2.3,2 Lamdba 表达式的类型表示："></a>2.3,2 Lamdba 表达式的类型表示：</h6><ul>
+<li>（） -&gt;unit          无参，返回值为Unit</li>
+<li>（Int）-&gt; Int       传入整型，返回一个整型</li>
+<li>（String,（String）-&gt;String）-&gt;Boolean      传入字符串，Lamdba 表达式，返回 Boolean </li>
+</ul>
+<h6 id="2-3-3-Lamdba-表达式的调用"><a href="#2-3-3-Lamdba-表达式的调用" class="headerlink" title="2.3.3 Lamdba 表达式的调用:"></a>2.3.3 Lamdba 表达式的调用:</h6><ul>
+<li>使用 () 进行调用，相当于invoke()</li>
+</ul>
+<h6 id="2-3-4-Lamdba-表达式的简化"><a href="#2-3-4-Lamdba-表达式的简化" class="headerlink" title="2.3.4 Lamdba 表达式的简化:"></a>2.3.4 Lamdba 表达式的简化:</h6><ul>
+<li><pre><code>args.forEach()&#123; println(it) &#125;  // 如果函数的最后一个参数是lamdba 表达式，则可以将lamdba 放在括号外面</code></pre>
+</li>
+<li><pre><code>args.forEach&#123; println(it) &#125;  // 如果函数参数只有一个lamdba表达式,则调用时小括号可以省略。
+    // lamdba 只有一个参数可默认为it</code></pre>
+</li>
+<li><pre><code>args.forEach(::print)    //入参，返回值与形参一致的函数可以用函数引用的方式作为实参传入。</code></pre>
+</li>
+</ul>
+<p>上述同样的功能，kotlin 语言的实现如下:</p>
+<ul>
+<li>自定义函数来实现：</li>
+</ul>
+<pre><code>fun main(args: Array&lt;String&gt;) &#123;
+  val result=sum(3,4)
+    println(result)
+&#125;
+  fun sum(arg1:Int,arg2:Int)=arg1+arg2</code></pre>
+<ul>
+<li>使用 Lamdba 表达式实现：</li>
+</ul>
+<pre><code>fun main(args: Array&lt;String&gt;) &#123;
+    println(result(3, 4))
+&#125;
+
+val result = &#123; arg1: Int, arg2: Int -&gt;
+    println(&quot;$arg1+$arg2=$&#123;arg1 + arg2&#125;&quot;)
+    arg1 + arg2
+&#125;</code></pre>
+<p>我们再来看个例子，要求:遍历kotlin 中main函数的参数，</p>
+<ul>
+<li>示例代码:Android 中最常见的点击事件</li>
+</ul>
+<pre><code> tv_toLogin.setOnClickListener(object:View.OnClickListener&#123;
+            override fun onClick(v: View?) &#123;
+                Toast.makeText(this,&quot;onClick&quot;,Toast.LENGTH_SHORT).show() 
+            &#125;
+
+        &#125;)</code></pre>
+<ul>
+<li>使用 Lambda 表达式的点击事件</li>
+</ul>
+<pre><code>tv_toLogin.setOnClickListener(&#123;
+            Toast.makeText(this,&quot;onClick&quot;,Toast.LENGTH_SHORT).show() 
+        &#125;)</code></pre>
+<p>怎么样？有没有感觉 lamdba 表达式使用起来既简洁又优雅。</p>
+<h4 id="3-高阶函数"><a href="#3-高阶函数" class="headerlink" title="3. 高阶函数"></a>3. 高阶函数</h4><h5 id="3-1-什么是高阶函数"><a href="#3-1-什么是高阶函数" class="headerlink" title="3.1 什么是高阶函数"></a>3.1 什么是高阶函数</h5><p>高阶函数就是以另一个函数作为参数或返回值的函数，Kotlin 可以以 lambda 或参数引用作为参数或返回值，所以，任何以 lambda 或函数引用作为参数或返回值的都是高阶函数。</p>
+<h5 id="3-2-常见的高阶函数"><a href="#3-2-常见的高阶函数" class="headerlink" title="3.2 常见的高阶函数"></a>3.2 常见的高阶函数</h5><h6 id="3-2-1-forEach-函数"><a href="#3-2-1-forEach-函数" class="headerlink" title="3.2.1 forEach()函数"></a>3.2.1 forEach()函数</h6><pre><code>fun main(args: Array&lt;String&gt;) &#123;
+   val list= listOf(1,2,3,4,5,6,7,8)
+    val newList=ArrayList&lt;Int&gt;()
+    list.forEach&#123;
+        val newElement=it *2+3
+        newList.add(newElement)
+    &#125;
+    newList.forEach(::println)
+&#125;</code></pre>
+<p>运行结果如下:</p>
+<p><img src="https://pic.downk.cc/item/5e0b0c7976085c3289045727.png"></p>
+<h6 id="3-2-2-map-函数"><a href="#3-2-2-map-函数" class="headerlink" title="3.2.2 :map()函数"></a>3.2.2 :map()函数</h6><blockquote>
+<p>map: 接受一个lambda表达式，并且有返回值，形成一个新的list,实现对集合中的元素进行修改</p>
+<p>好，我们通过高阶函数 map 来实现如上的效果：</p>
+</blockquote>
+<pre><code>fun main(args: Array&lt;String&gt;) &#123;
+   val list= listOf(1,2,3,4,5,6,7,8)
+   val newList=list.map &#123;
+       it*2+3
+   &#125;
+    println(newList)
+&#125;</code></pre>
+<p>运行结果如下：</p>
+<p><img src="https://pic.downk.cc/item/5e0b0c7976085c3289045727.png"></p>
+<p>以上代码中通过高阶函数 map 实现了对集合中每个元素乘以2再加3的操作，不用去遍历集合中每个元素，是不是简单了许多。</p>
+<h6 id="3-2-3-flatMap-函数"><a href="#3-2-3-flatMap-函数" class="headerlink" title="3.2.3 flatMap()函数"></a>3.2.3 flatMap()函数</h6><blockquote>
+<p>flatMap是map和flat两个函数的“复合逻辑，可以将集合中的数据进行合并成一个集合。</p>
+</blockquote>
+<p>示例代码如下:</p>
+<pre class="line-numbers language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">)</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">val</span> list<span class="token operator">=</span> <span class="token function">listOf</span><span class="token punctuation">(</span>
+      <span class="token number">1</span><span class="token operator">..</span><span class="token number">20</span><span class="token punctuation">,</span>
+      <span class="token number">21</span><span class="token operator">..</span><span class="token number">30</span><span class="token punctuation">,</span>
+      <span class="token number">31</span><span class="token operator">..</span><span class="token number">100</span>
+  <span class="token punctuation">)</span>
+
+   <span class="token keyword">val</span> flatList<span class="token operator">=</span>list<span class="token punctuation">.</span>flatMap &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+       it<span class="token punctuation">.</span>map &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+           <span class="token string">"NO.<span class="token interpolation variable">$it</span>"</span>
+       &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+   &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+
+    flatList<span class="token punctuation">.</span>forEach&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果如下: 将集合中数字从1~100打印输出，每个数字前标有“NO.”</p>
+<p><img src="https://pic.downk.cc/item/5e0b138b76085c328906099d.png"></p>
+<h6 id="3-2-4-filter-函数"><a href="#3-2-4-filter-函数" class="headerlink" title="3.2.4 filter()函数"></a>3.2.4 filter()函数</h6><blockquote>
+<p>传入Lambda 表达式为 true 是，保留该元素；使用filter对集合进行按条件过滤</p>
+</blockquote>
+<pre class="line-numbers language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">)</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">val</span> list<span class="token operator">=</span> <span class="token function">listOf</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> result<span class="token operator">=</span>list<span class="token punctuation">.</span>filter &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+        it<span class="token operator">%</span><span class="token number">2</span><span class="token operator">==</span><span class="token number">0</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果如下:</p>
+<p><img src="https://pic.downk.cc/item/5e0b1f1076085c328907ac96.png"></p>
+<h5 id="3-3-kotlin-中的-特殊函数"><a href="#3-3-kotlin-中的-特殊函数" class="headerlink" title="3.3 kotlin 中的 特殊函数"></a>3.3 kotlin 中的 特殊函数</h5><h6 id="3-3-1-run-函数"><a href="#3-3-1-run-函数" class="headerlink" title="3.3.1 run()函数"></a>3.3.1 run()函数</h6><blockquote>
+<p>该函数实际上可以说是let和with两个函数的结合体，run函数接收一个lambda函数为参数，以闭包形式返回，返回值为最后一行的值或者指定的return的表达式。</p>
+</blockquote>
+<p>示例代码如下:</p>
+<pre class="line-numbers language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">)</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">FunKotlin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">myFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    run &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">FunKotlin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">myFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+    run &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"kotlin"</span><span class="token punctuation">)</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> FunKotlin&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">fun</span> <span class="token function">myFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>String&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"开始执行myFun()函数"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">"kotlin 中的特殊函数"</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果如下:</p>
+<p><img src="https://pic.downk.cc/item/5e0d4ac176085c3289563623.png"></p>
+<p>在上面的代码中，我们定义了myFun()函数并通过run() 进行调用，调用的结果即为myFun（）的结果。</p>
+<p>run() 源码如下：</p>
+<pre class="line-numbers language-kotlin"><code class="language-kotlin"><span class="token comment" spellcheck="true">/**
+ * Calls the specified function [block] and returns its result.
+ */</span>
+<span class="token label symbol">@kotlin</span><span class="token punctuation">.</span>internal<span class="token punctuation">.</span>InlineOnly
+<span class="token keyword">public</span> <span class="token keyword">inline</span> <span class="token keyword">fun</span> <span class="token operator">&lt;</span>R<span class="token operator">></span> <span class="token function">run</span><span class="token punctuation">(</span>block<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> R<span class="token punctuation">)</span><span class="token operator">:</span> R &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+    contract &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">callsInPlace</span><span class="token punctuation">(</span>block<span class="token punctuation">,</span> InvocationKind<span class="token punctuation">.</span>EXACTLY_ONCE<span class="token punctuation">)</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">block</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如代码所示：我们传入block()参数，最终返回了block() 的执行结果。</p>
+<h6 id="3-3-2-apply-函数"><a href="#3-3-2-apply-函数" class="headerlink" title="3.3.2 apply()函数"></a>3.3.2 apply()函数</h6><p>源码如下:</p>
+<pre><code>/**
+ * Calls the specified function [block] with `this` value as its receiver and returns `this` value.
+ */
+@kotlin.internal.InlineOnly
+public inline fun &lt;T&gt; T.apply(block: T.() -&gt; Unit): T &#123;
+    contract &#123;
+        callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+    &#125;
+    block()
+    return this
+&#125;</code></pre>
+<p>如代码所示:我们传入 block() 函数，先是调用了block()函数，然后返回当前的调用者对象this，也就是说先执行完block()代码块逻辑后，再次返回当前的调用者对象。</p>
+<p>示例代码如下：</p>
+<pre><code>fun main(args: Array&lt;String&gt;) &#123;
+    testApply()
+&#125;
+
+fun testApply()&#123;
+    val list= mutableListOf&lt;String&gt;()
+    list.add(&quot;A&quot;)
+    list.add(&quot;B&quot;)
+    list.add(&quot;C&quot;)
+    list.add(&quot;D&quot;)
+    list.add(&quot;E&quot;)
+    println(&quot;普通写法:list=$&#123;list&#125;&quot;)
+
+    val applyList=mutableListOf&lt;String&gt;().apply &#123;
+        add(&quot;A&quot;)
+        add(&quot;B&quot;)
+        add(&quot;C&quot;)
+        add(&quot;D&quot;)
+        add(&quot;E&quot;)
+        println(&quot;使用apply 函数写法 this=$&#123;this&#125;&quot;)
+    &#125;
+&#125;</code></pre>
+<p>运行结果如下:</p>
+<p><img src="https://pic.downk.cc/item/5e0d543b76085c328957393e.png"></p>
+<p>如代码所示：我们的需求是创建一个集合并向其中添加元素”A”，“B”,”C”，“D”，“E”,然后打印出该集合，相比普通写法，使用apply() 函数显然简洁了许多。</p>
+<h6 id="3-3-3-let-函数"><a href="#3-3-3-let-函数" class="headerlink" title="3.3.3 let() 函数"></a>3.3.3 let() 函数</h6><blockquote>
+<p>let扩展函数的实际上是一个作用域函数，当你需要去定义一个变量在一个特定的作用域范围内，let函数的是一个不错的选择；let函数另一个作用就是可以避免写一些判断null的操作</p>
+</blockquote>
+<p>源码如下：</p>
+<pre><code>/**
+ * Calls the specified function [block] with `this` value as its argument and returns its result.
+ */
+@kotlin.internal.InlineOnly
+public inline fun &lt;T, R&gt; T.let(block: (T) -&gt; R): R &#123;
+    contract &#123;
+        callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+    &#125;
+    return block(this)
+&#125;</code></pre>
+<p>如代码所示，我们重点看最后一行return block(this)，就是说把当前调用对象作为参数传入block()代码块中。</p>
+<p>示例代码如下:我们以Android中在适配器 adapter 中进行网络图片的加载。</p>
+<pre><code> context?.let &#123;           Glide.with(it).load(item.envelopePic).crossFade().into(helper.getView&lt;ImageView&gt;(R.id.iv_envelopePic))
+                &#125;
+
+在上面的代码中，it 指代的即是 context，意为上下文。</code></pre>
+<h6 id="3-3-4-also-函数"><a href="#3-3-4-also-函数" class="headerlink" title="3.3.4 also()函数"></a>3.3.4 also()函数</h6><p>源码如下：</p>
+<pre><code>/**
+ * Calls the specified function [block] with `this` value as its argument and returns `this` value.
+ */
+@kotlin.internal.InlineOnly
+@SinceKotlin(&quot;1.1&quot;)
+public inline fun &lt;T&gt; T.also(block: (T) -&gt; Unit): T &#123;
+    contract &#123;
+        callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+    &#125;
+    block(this)
+    return this
+&#125;</code></pre>
+<p>看最后两行代码，先是执行了block(this)，随后返回this，即当前的调用者对象。</p>
+<p>示例代码如下:</p>
+<pre class="line-numbers language-kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">testAlsoFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">val</span> a <span class="token operator">=</span> <span class="token string">"ABC"</span><span class="token punctuation">.</span>also &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//输出：ABC</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//输出：ABC</span>
+    a<span class="token punctuation">.</span>let &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//输出：ABC</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">)</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">testAlsoFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在上面的代码中，字符串“ABC”调用了also（），会打印出调用者 “ABC”.</p>
+<h6 id="3-3-5-with-函数"><a href="#3-3-5-with-函数" class="headerlink" title="3.3.5 with() 函数"></a>3.3.5 with() 函数</h6><p>源码如下:</p>
+<pre><code>/**
+ * Calls the specified function [block] with the given [receiver] as its receiver and returns its result.
+ */
+@kotlin.internal.InlineOnly
+public inline fun &lt;T, R&gt; with(receiver: T, block: T.() -&gt; R): R &#123;
+    contract &#123;
+        callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+    &#125;
+    return receiver.block()
+&#125;
+</code></pre>
+<p>我们看到with()函数传入了一个接收者对象receiver，然后使用该对<br>象receiver去调用传入的Lambda代码块receiver.block()。</p>
+<ul>
+<li>示例代码在 Android中我们初始化一个控件并给其赋值，Java 语言实现如下:</li>
+</ul>
+<pre><code>TextView text=(TextView)findViewById(R.id.tv_text)
+text.setText(&quot;哈哈哈&quot;)
+text.setTextSize(23)</code></pre>
+<ul>
+<li>kotlin 语言实现如下：</li>
+</ul>
+<pre><code>with(tv_text)&#123;
+text=&quot;哈哈哈&quot;
+textSize=23
+&#125;</code></pre>
+<p>在上面的代码中，实现的功能是一样的，但是显然 kotlin 语言更加的简洁。</p>
 
             </div>
             <hr/>
@@ -740,8 +1052,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/4/">
-                                    <span class="chip bg-color">4</span>
+                                <a href="/tags/kotlin/">
+                                    <span class="chip bg-color">kotlin</span>
                                 </a>
                             
                         </div>
@@ -909,12 +1221,11 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/18/ce-shi-4/">
+                <a href="/2020/10/09/ce-shi-5/">
                     <div class="card-image">
                         
                         
@@ -930,9 +1241,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -945,7 +1256,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -964,19 +1274,21 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/18/ce-shi-1/">
+                <a href="/2020/09/18/kotlin-xue-xi-jiao-cheng-zhun-bei-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="测试1">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Kotlin 学习教程（准备篇）">
                         
-                        <span class="card-title">测试1</span>
+                        <span class="card-title">Kotlin 学习教程（准备篇）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            前言此篇文章为kotlin 学习教程的第一篇，主要介绍在进行kotlin学习前环境的搭建以及如何通过IDE创建一个kotlin项目。
+1.关于 kotlin
+kotlin 和 Java 语言一样，都是静态型编程语言，且都可以用来开发 And
                         
                     </div>
                     <div class="publish-info">
@@ -1204,7 +1516,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">312</span>&nbsp;字
+                class="white-color">9.2k</span>&nbsp;字
             
             
             
